@@ -14,11 +14,7 @@ app.use(express.json())
 dotenv.config()
 mongoose.connect(process.env.MONGODB).then(()=>console.log("Database connected successfully")).catch(error=>console.error(error))
 const corsOptions = {
-  origin: [
-    'http://localhost:5173', 
-    'http://localhost:3000',
-   ' https://rms-frontend-umzk.vercel.app/' 
-  ],
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
